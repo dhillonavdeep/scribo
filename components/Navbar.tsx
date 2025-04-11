@@ -5,6 +5,7 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function ScriboNavbar() {
   const { data: session } = useSession();
@@ -36,7 +37,7 @@ export default function ScriboNavbar() {
     >
       <Container>
         <Link href="/" className="navbar-brand d-flex align-items-center gap-2">
-          <img src="/logo.png" alt="Scribo Logo" height="32" />
+        <Image src="/logo.png" alt="Scribo" height={32} width={32} />
           <span className={`fw-bold fs-4 ${dark ? 'text-light' : 'text-primary'}`}>Scribo</span>
         </Link>
 
