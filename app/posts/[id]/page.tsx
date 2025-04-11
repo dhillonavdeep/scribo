@@ -10,8 +10,7 @@ import Image from 'next/image';
 
 
 export default async function PostDetail({ params }: { params: { id: string } }) {
-  const { id } = params; // ✅ Destructure here safely
-
+  
   const post = (await Post.findById(params.id).lean()) as unknown as IPost;
   if (!post) return notFound();
 

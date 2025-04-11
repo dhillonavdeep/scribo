@@ -20,6 +20,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, data: newPost }, { status: 201 });
   } catch (err) {
+    console.error(err); // ✅ Add this to use 'err'
     return NextResponse.json({ success: false, error: 'Failed to create post' }, { status: 400 });
   }
 }
