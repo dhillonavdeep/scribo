@@ -1,0 +1,87 @@
+.scribo-loader-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 999;
+  }/* Make loader overlay cover everything */
+.scribo-loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.7); /* Matches app bg */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Loader container */
+  .loader {
+    width: 48px;
+    height: 40px;
+    display: flex;
+    gap: 2px;
+  }
+  
+  /* Each animated bar */
+  .bar {
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    animation: bounce 1s infinite ease-in-out;
+  }
+  
+  /* Modern aesthetic palette */
+  .bar1 { background-color: #6C63FF; }
+  .bar2 { background-color: #5ED6FF; animation-delay: -0.9s; }
+  .bar3 { background-color: #6AD08A; animation-delay: -0.8s; }
+  .bar4 { background-color: #FFC75F; animation-delay: -0.7s; }
+  .bar5 { background-color: #FF6B6B; animation-delay: -0.6s; }
+  
+  @keyframes bounce {
+    0%, 40%, 100% {
+      transform: scaleY(0.3);
+    }
+    20% {
+      transform: scaleY(1);
+    }
+  }
+  
+  
+  .loader {
+    width: 40px; /* made narrower */
+    height: 40px;
+    text-align: center;
+    display: flex;
+    gap: 2px;
+  }
+  
+  .bar {
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    display: inline-block;
+    animation: bounce 1s infinite ease-in-out;
+  }
+  
+  /* Fresh modern colors */
+  .bar1 { background-color: #6C63FF; }
+  .bar2 { background-color: #5ED6FF; animation-delay: -0.9s; }
+  .bar3 { background-color: #6AD08A; animation-delay: -0.8s; }
+  .bar4 { background-color: #FFC75F; animation-delay: -0.7s; }
+  .bar5 { background-color: #FF6B6B; animation-delay: -0.6s; }
+  
+  @keyframes bounce {
+    0%, 40%, 100% {
+      transform: scaleY(0.3);
+    }
+    20% {
+      transform: scaleY(1);
+    }
+  }
+  
