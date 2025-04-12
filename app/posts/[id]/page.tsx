@@ -9,9 +9,11 @@ import DeleteButton from '@/components/DeleteButton';
 import Image from 'next/image';
 
 
-export default async function PostDetail({ params }: { params: { id: string } }) {
+export default async function PostDetail({ params }: { params: Promise<{ id: string }> }) {
   
-  const post = (await Post.findById(params.id).lean()) as unknown as IPost;
+  const id = (await params).id // ✅ Await params
+  await dbConnect();
+  const post = (await Post.findById(id).lean()) as unknown as IPost;
   if (!post) return notFound();
 
   const session = await auth();

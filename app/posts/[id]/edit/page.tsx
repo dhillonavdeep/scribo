@@ -6,11 +6,11 @@ import PostForm from '@/components/PostForm';
 import { Container } from 'react-bootstrap';
 import { IPost } from '@/models/Post';
 
-export default async function EditPostPage({ params }: { params: { id: string } }) {
+export default async function EditPostPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await auth();
   if (!session) redirect('/');
 
-  const post = (await Post.findById(params.id).lean()) as unknown as IPost;
+  const post = (await Post.findById((await params).id).lean()) as unknown as IPost;
 
   if (!post || post.author !== session.user?.name) redirect('/');
 
