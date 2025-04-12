@@ -1,8 +1,8 @@
 import dbConnect from '@/lib/dbConnect';
 import Post from '@/models/Post';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import Link from 'next/link';
+import { Container, Row, Col } from 'react-bootstrap';
 import PostCard from '@/components/PostCard';
+import StartWritingButton from '@/components/StartWritingButton'; // ✅ new component
 
 export default async function HomePage() {
   await dbConnect();
@@ -10,7 +10,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Dark Hero Section */}
+      {/* Hero Section */}
       <section className="bg-secondary text-white py-5 text-center">
         <Container className="px-4 px-md-0">
           <h1 className="display-4 fw-bold">Scribo</h1>
@@ -18,17 +18,7 @@ export default async function HomePage() {
             Thoughtful blogging meets elegant minimalism. Share your voice, your way.
           </p>
 
-          <Link href="/create" passHref>
-            <Button
-              size="lg"
-              variant="light"
-              className="d-inline-flex align-items-center gap-2 px-4 py-2 fs-5 fw-medium shadow-sm"
-              style={{ borderRadius: '40px' }}
-            >
-              <img src="/logo.png" height={24} alt="Scribo logo" />
-              Start Writing
-            </Button>
-          </Link>
+          <StartWritingButton />
         </Container>
       </section>
 
